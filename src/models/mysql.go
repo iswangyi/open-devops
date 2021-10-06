@@ -11,6 +11,7 @@ import (
 
 var DB = map[string]*xorm.Engine{}
 
+// MySQLInit 初始化数据库连接
 func MySQLInit(sConf []*config.MySQLConf) error {
 	for _, conf := range sConf {
 		db, err := xorm.NewEngine("mysql", conf.Addr)
